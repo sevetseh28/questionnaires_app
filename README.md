@@ -11,7 +11,7 @@ Developed using Django 2 and Python 3.7
 
 This app also has a `load_questionnarie` command that is used to load a Questionnaire from a json file.
 It takes `-p` (path to json file) and `-n` (name of the questionnaire) as arguments.
-
+The following JSON file can be located from `questionnaires/management/commands/questionnaires_examples/questionnaire_example.json`
 JSON file must be like:
 
 ```json
@@ -47,6 +47,7 @@ JSON file must be like:
   }
 }
 ```
+
 
 ## Frontend (Vue App)
 1. cd into frontend directory and run ```npm install```

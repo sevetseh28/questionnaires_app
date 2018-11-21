@@ -13,16 +13,19 @@ class QuestionNode(models.Model):
 
 class AnswerVariant(models.Model):
     text = models.CharField(max_length=1024)
-    parent_question = models.ForeignKey(QuestionNode, on_delete=CASCADE, limit_choices_to=5,
-                                        related_name='answer_variants')
+    parent_question = models.ForeignKey(QuestionNode, on_delete=CASCADE, related_name='answer_variants')
     next_question = models.ForeignKey(QuestionNode, on_delete=CASCADE)
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        if self.parent_question.answer_variants.count() < 5:
+            super(AnswerVariant, self).save()
+        else:
+            raise Exception(f'{self.parent_question.text} has already 5 answer variants. No more are allowed.')
 
 
 class Questionnaire(models.Model):
     description = models.CharField(max_length=1024)
     root_node = models.ForeignKey(QuestionNode, on_delete=CASCADE)  # Defines de conversation tree
-    """
-    Example:"""
 
 
 # Conversations instances
@@ -32,7 +35,6 @@ class UserConversation(models.Model):
 
     def __str__(self):
         return f'{self.questionnarie.root_node.text}: {" -> ".join([x.text for x in self.user_inputs.order_by("date")])}'
-
 
 
 class UserInput(models.Model):
