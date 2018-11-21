@@ -11,14 +11,14 @@
                         <v-icon>home</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
-                        <v-list-tile-title>Questionnaries List</v-list-tile-title>
+                        <v-list-tile-title>Questionnaires List</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
             </v-list>
         </v-navigation-drawer>
         <v-toolbar color="purple darken-1" dark fixed app>
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-toolbar-title>Questionnaries App</v-toolbar-title>
+            <v-toolbar-title>Questionnaires App</v-toolbar-title>
         </v-toolbar>
         <v-content>
             <v-container fluid >
