@@ -1,6 +1,9 @@
 # Questionaries App
 This is a simple Questionnaries app developed in Django (for the backend REST API) and with Vue.js for the frontend.
 
+You can choose a questionnaire from a list and each questionnaire has predefined answer variants for the user to select.
+
+![alt text](AppScreenshot.png)
 
 # Usage
 Developed using Django 2 and Python 3.7 
