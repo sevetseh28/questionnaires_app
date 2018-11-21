@@ -1,0 +1,31 @@
+{
+  "question": "Are you hungry?",
+  "answer_variants": {
+    "Yes": {
+      "question": "What would you like to eat?",
+      "answer_variants": {
+        "Hamburger": {
+          "question": "Nice, I will order a hamburger for you!",
+          "answer_variants": null
+        },
+        "Pizza": {
+          "question": "Would you like pizza with mushrooms?",
+          "answer_variants": {
+            "Yes": {
+              "question": "Ok, I will order the best pizza in town for you",
+              "answer_variants": null
+            },
+            "No": {
+              "question": "No? Well... stay hungry then",
+              "answer_variants": null
+            }
+          }
+        }
+      }
+    },
+    "No": {
+      "question": "Ok. Call me when you're hungry.",
+      "answer_variants": null
+    }
+  }
+}
